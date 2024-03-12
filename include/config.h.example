@@ -1,0 +1,26 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+#include <Arduino.h>
+
+// hexagon enables mode for hexagons, strips for just strip
+// #define HEXAGON
+#define STRIPS
+
+const char *NODE_ID       =  "node-1";
+const char *WIFI_SSID     =  "HOME";
+const char *WIFI_PASSWORD =  "PASSWORD";
+const int STRIP_PIN       =  D3;
+const int STRIP_LENGTH    =  190;
+
+#ifdef HEXAGON
+const int HEXEGON_LENGTH  =  28;
+const int HEXEGONS_COUNT  =  4;
+const int HEXAGONS[HEXEGONS_COUNT][2] = {
+    {0, 28},
+    {28, 56},
+    {56, 84},
+    {84, 112}
+};
+#endif
+
+#endif
